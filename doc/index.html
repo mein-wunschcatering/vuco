@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>vuco</title>
+    <meta content='EN' http-equiv='language'>
+    <meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
+    <meta content='Vue.js components' name='description'>
+    <meta content='Sascha Hillig' name='copyright'>
+    <link rel="stylesheet" media="screen" href="./index.css" />
+    <link rel="stylesheet" media="screen" href="//cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="store-updater">
+      <form action="/">
+        <input name="attr" placeholder="attr z.B. 'btn1'" />
+        <input name="key" placeholder="key z.B. 'label'" />
+        <input name="value" placeholder="value z.B. 'Save...'" />
+        <button type="submit">send</button>
+      </form>
+    </div>
+    <div class="container" id="app">
+      <div class="row">
+        <div class="col-md-4 navigation">
+          <h5>Standard</h5>
+          <ul>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#menu">Menu &amp; Menu-Item</a></li>
+            <li><a href="#dropdown-button">Dropdown Button</a></li>
+          </ul>
+          <h5>Form</h5>
+          <ul>
+            <li><a href="#inputs">Inputs</a></li>
+            <li><a href="#textarea">Textarea</a></li>
+            <li><a href="#checkbox">Checkbox</a></li>
+            <li><a href="#select">Select</a></li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+
+          <!-- buttons -->
+          <section id="buttons">
+            <div class="row">
+              <div class="col-xs-12"><h2>Buttons</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="vucoex"><vuco-button>Button</vuco-button></div>
+                <div class="vucoex"><vuco-button label="Button"></vuco-button></div>
+                <div class="vucoex"><vuco-button name="btn1">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button name="btn2"></vuco-button></div>
+                <div class="vucoex"><vuco-button>Button</vuco-button></div>
+                <div class="vucoex"><vuco-button theme="primary">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button theme="highlight">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button theme="danger">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button theme="success">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" theme="primary">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" theme="highlight">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" theme="danger">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" theme="success">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" hidden="true">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" block="true">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" tiny="true">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" small="true">Button</vuco-button></div>
+                <div class="vucoex"><vuco-button filled="true" small="large">Button</vuco-button></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- menu -->
+          <section id="menu">
+            <div class="row">
+              <div class="col-xs-12"><h2>Menu</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+
+                <div class="vucoex">
+<vuco-menu>
+  <vuco-menu-item>Menu item 1</vuco-menu-item>
+  <vuco-menu-item>Menu item 2</vuco-menu-item>
+  <vuco-menu-item>Menu item 3</vuco-menu-item>
+  <vuco-menu-item selected="true">Menu item 4</vuco-menu-item>
+  <vuco-menu-item disabled="true">Menu item 5</vuco-menu-item>
+  <vuco-menu-item disabled="true">Menu item 6</vuco-menu-item>
+  <vuco-menu-item>Menu item 7</vuco-menu-item>
+</vuco-menu>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- dropdown button -->
+          <section id="dropdown-button">
+            <div class="row">
+              <div class="col-xs-12"><h2>Dropdown Button</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+
+                <div class="vucoex">
+<vuco-dropdown-button filled="true" label="Button">
+  <vuco-menu-item>Menu item 1</vuco-menu-item>
+  <vuco-menu-item>Menu item 2</vuco-menu-item>
+  <vuco-menu-item>Menu item 3</vuco-menu-item>
+  <vuco-menu-item selected="true">Menu item 4</vuco-menu-item>
+  <vuco-menu-item disabled="true">Menu item 5</vuco-menu-item>
+  <vuco-menu-item disabled="true">Menu item 6</vuco-menu-item>
+  <vuco-menu-item>Menu item 7</vuco-menu-item>
+</vuco-dropdown-button>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- inputs -->
+          <section id="inputs">
+            <div class="row">
+              <div class="col-xs-12"><h2>Inputs</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="vucoex"><vuco-input value="my content"></vuco-button></div>
+                <div class="vucoex"><vuco-input placeholder="my placeholder"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Simple Input" value="my content"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Simple Input" value="my content" text-align="center"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Simple Input" value="my content" text-align="right"></vuco-button></div>
+                <div class="vucoex"><vuco-input name="prenamed_input_1" label="Prenamed Input"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Readonly Input" readonly="true" value="readonly content"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Input with maxlength" maxlength="20"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Small Input" small="true"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Large Input" large="true"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Disabled Input" disabled="true"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Required Input" required="true"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Email Input" type="email"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Number Input" type="number"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Number Input with max" type="number" max="10"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Number Input with min" type="number" min="0"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Number Input with step" type="number" step="2"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Search Input" type="search"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Tel Input" type="tel"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Url Input" type="url" autocomplete="false"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Password Input" type="password" autocomplete="false"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Currency Input" type="currency"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Input with hint" hint="Here is a hint"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Input with error" error-message="Here is an error"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Input with mdi icon" mdi-icon="check"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Input with mdi icon" mdi-icon="check" icon-position="right"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Input with custom icon" icon="✓"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Input with custom icon" icon="✓" icon-position="right"></vuco-button></div>
+
+                <hr/>
+
+                <div class="vucoex"><vuco-input label="Currency Input" type="currency" value="1999.99"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Currency Input with sepDecimal and sepGroup" type="currency" value="1999.99" sep-decimal="," sep-group="."></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Currency Input with currPrecision" type="currency" value="1999.99" curr-precision="3"></vuco-button></div>
+                <div class="vucoex"><vuco-input label="Currency Input with currValAsInteger" type="currency" value="199999" curr-val-as-integer="true"></vuco-button></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- textarea -->
+          <section id="textarea">
+            <div class="row">
+              <div class="col-xs-12"><h2>Textarea</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="vucoex"><vuco-textarea value="my content"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea placeholder="my placeholder"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Simple Textarea" value="my content"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Simple Textarea" value="my content" text-align="center"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Simple Textarea" value="my content" text-align="right"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea name="prenamed_textarea_1" label="Prenamed Textarea"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Readonly Textarea" readonly="true" value="readonly content"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with maxlength" maxlength="20"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Small Textarea" small="true"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Large Textarea" large="true"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Disabled Textarea" disabled="true"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Required Textarea" required="true"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with hint" hint="Here is a hint"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with error" error-message="Here is an error"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with mdi icon" mdi-icon="check"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with mdi icon" mdi-icon="check" icon-position="right"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with custom icon" icon="✓"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with custom icon" icon="✓" icon-position="right"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with maxRows" max-rows="3"></vuco-button></div>
+                <div class="vucoex"><vuco-textarea label="Textarea with minRows" min-rows="5"></vuco-button></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- checkbox -->
+          <section id="checkbox">
+            <div class="row">
+              <div class="col-xs-12"><h2>Checkbox</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="vucoex"><vuco-checkbox value="my content"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Simple Checkbox" checked="false"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Simple Checkbox" checked="true"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox name="prenamed_checkbox_1" label="Prenamed Checkbox"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Small Checkbox" small="true"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Large Checkbox" large="true"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Disabled Checkbox" disabled="true"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Required Checkbox" required="true"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Checkbox with hint" hint="Here is a hint"></vuco-button></div>
+                <div class="vucoex"><vuco-checkbox label="Checkbox with error" error-message="Here is an error"></vuco-button></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- select -->
+          <section id="select">
+            <div class="row">
+              <div class="col-xs-12"><h2>Select</h2></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+
+                <div class="vucoex">
+<vuco-select label="Select field" value="3">
+  <vuco-menu-item value="1">Menu item 1</vuco-menu-item>
+  <vuco-menu-item value="2">Menu item 2</vuco-menu-item>
+  <vuco-menu-item value="3">Menu item 3</vuco-menu-item>
+  <vuco-menu-item value="4">Menu item 4</vuco-menu-item>
+  <vuco-menu-item value="5" disabled="true">Menu item 5</vuco-menu-item>
+  <vuco-menu-item value="6" disabled="true">Menu item 6</vuco-menu-item>
+  <vuco-menu-item>Menu item 7</vuco-menu-item>
+</vuco-select>
+                </div>
+
+                <div class="vucoex">
+<vuco-select label="Multiselect field" value="2,3" multiple="true">
+  <vuco-menu-item value="1">Menu item 1</vuco-menu-item>
+  <vuco-menu-item value="2">Menu item 2</vuco-menu-item>
+  <vuco-menu-item value="3">Menu item 3</vuco-menu-item>
+  <vuco-menu-item value="4">Menu item 4</vuco-menu-item>
+  <vuco-menu-item value="5" disabled="true">Menu item 5</vuco-menu-item>
+  <vuco-menu-item value="6" disabled="true">Menu item 6</vuco-menu-item>
+  <vuco-menu-item>Menu item 7</vuco-menu-item>
+  <vuco-menu-item value="8">Menu item 8</vuco-menu-item>
+  <vuco-menu-item value="9">Menu item 9</vuco-menu-item>
+</vuco-select>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

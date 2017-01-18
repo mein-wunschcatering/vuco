@@ -1,0 +1,14 @@
+.idea
+.node-version
+.sass-cache
+.sass-lint.yml
+.tm_properties
+*.DS_Store
+*.swp
+*.rdb
+build
+coverage
+karma.conf.js
+node_modules
+npm-debug.log
+tmp

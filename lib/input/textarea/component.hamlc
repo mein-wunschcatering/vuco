@@ -1,0 +1,14 @@
+%div{ ':class' => "[defaultClasses, textAlignClass, isDisabled ? disabledClass : '', isRequired ? requiredClass : '', hasErrors ? errorClass : '', hasIcon ? iconClass : '', isSmall ? smallClass : '']", 'data-vuco-input' => '', ':data-vuco-input-name' => '_name', ':data-vuco-input-value' => '_value' }
+  %label{ ':for' => 'componentUniqueId', 'v-if' => 'hasLabel' } {{ _label }}
+  .vuco-input-container
+    .vuco-textarea-mirror{ 'aria-hidden' => 'true', 'ref' => 'mirror' } &#160;
+    .vuco-textarea-container
+      %textarea.vuco-form-control{ ':id' => 'componentUniqueId', 'v-model' => '_value', ':name' => '_name', ':placeholder' => '_placeholder', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', ':maxlength' => 'maxlength', ':disabled' => 'isDisabled', 'ref' => 'textarea', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    .vuco-icon-container{ 'v-if' => 'hasNormalIcon', 'v-html' => 'icon' }
+    .vuco-icon-container{ 'v-else' => true }
+      %i{ 'v-if' => "hasMdiIcon", ':class' => "[mdiClass]" }
+
+  %p.error{ 'v-if' => "hasErrors" } {{ _errorMessage }}
+  %p.hint{ 'v-if' => "hasHint" } {{ _hint }}
+

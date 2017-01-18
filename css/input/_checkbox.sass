@@ -1,0 +1,87 @@
+.vuco-checkbox
+
+  .vuco-checkbox-inside
+    +align-items(flex-start)
+    +display(flex)
+    +flex-flow(row nowrap)
+    +justify-content(flex-start)
+
+  .vuco-input-container
+    +flex-grow(0)
+    +flex-shrink(0)
+    cursor: pointer
+    height: 16px
+    overflow: hidden
+    user-select: none
+    width: 24px
+
+    i
+      margin-left: 4px
+
+    input
+      left: 50px
+      opacity: 0
+      pointer-events: none
+      position: absolute
+      visibility: hidden
+
+  label
+    +flex-grow(1)
+    +user-select(none)
+    cursor: pointer
+    font-weight: normal
+
+  .hint,
+  .error
+    margin-bottom: 3px
+    margin-left: 25px
+    margin-top: 0
+    text-align: left
+
+  .icon-inactive,
+  .icon-active
+    position: absolute
+
+  .icon-inactive
+    color: #666
+    display: block
+
+  .icon-active
+    color: $color-primary
+    display: none
+
+  &.vuco-checkbox-checked
+
+    .icon-inactive
+      display: none
+
+    .icon-active
+      display: block
+
+  &.vuco-input-disabled
+
+    .icon-inactive,
+    .icon-active
+      color: #ccc
+
+  &.vuco-input-small
+
+    .vuco-input-container
+      font-size: 14px
+
+      i
+        margin-left: 5px
+
+  &.vuco-input-large
+
+    .vuco-input-container
+      font-size: 20px
+      height: 20px
+      width: 28px
+
+    label
+      font-size: 16px
+
+
+
+

@@ -1,0 +1,27 @@
+%div{ ':class' => "[defaultClasses, textAlignClass, isDisabled ? disabledClass : '', isRequired ? requiredClass : '', hasErrors ? errorClass : '', hasIcon ? iconClass : '', isSmall ? smallClass : '']", 'data-vuco-input' => '', ':data-vuco-input-name' => '_name', ':data-vuco-input-value' => '_value' }
+  %label{ ':for' => 'componentUniqueId', 'v-if' => 'hasLabel' } {{ _label }}
+  .vuco-input-container
+
+    %input.vuco-form-control{ 'v-if' => '_type === "text"', 'type' => 'text', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    %input.vuco-form-control{ 'v-if' => '_type === "email"', 'type' => 'email', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    %input.vuco-form-control{ 'v-if' => '_type === "number"', 'type' => 'number', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    %input.vuco-form-control{ 'v-if' => '_type === "search"', 'type' => 'search', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    %input.vuco-form-control{ 'v-if' => '_type === "tel"', 'type' => 'tel', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    %input.vuco-form-control{ 'v-if' => '_type === "url"', 'type' => 'url', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    %input.vuco-form-control{ 'v-if' => '_type === "password"', 'type' => 'password', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    %input.vuco-form-control{ 'v-if' => '_type === "currency"', 'type' => 'currency', ':name' => '_name', ':id' => 'componentUniqueId', ':placeholder' => '_placeholder', ':step' => 'step', ':maxlength' => '_maxlength', ':max' => '_max', ':min' => '_min', ':readonly' => '_readonly', ':required' => '_required', ':autocomplete' => '_autocomplete', ':autofocus' => '_autofocus', 'v-model' => '_value', ':disabled' => 'isDisabled', 'v-on:focus' => 'onInputFocus', 'v-on:blur' => 'onInputBlur', 'v-on:keydown' => 'onInputKeydown', 'v-on:keyup' => 'onInputKeyup' }
+
+    .vuco-icon-container{ 'v-if' => 'hasNormalIcon', 'v-html' => '_icon' }
+    .vuco-icon-container{ 'v-else' => true }
+      %i{ 'v-if' => "hasMdiIcon", ':class' => "[mdiClass]" }
+
+  %p.error{ 'v-if' => "hasErrors" } {{ _errorMessage }}
+  %p.hint{ 'v-if' => "hasHint" } {{ _hint }}
+

@@ -1,0 +1,49 @@
+.vuco-textarea
+
+  .vuco-textarea-mirror,
+  .vuco-textarea-container
+    font-size: 13px
+    line-height: 1.42857143
+    min-height: 55px
+
+  .vuco-textarea-mirror
+    padding: 6px 12px
+    visibility: hidden
+    word-wrap: break-word
+
+  .vuco-textarea-container
+    +position(absolute, 0 0 0 0)
+    border-radius: 2px
+    color: #555
+
+  textarea
+    background: inherit
+    border: 0
+    color: inherit
+    font-family: inherit
+    font-size: inherit
+    line-height: inherit
+    min-height: 40px
+    outline: none
+    padding: 0
+    position: relative
+    resize: none
+    text-align: inherit
+    width: 100%
+
+    &.vuco-form-control
+      height: 100%
+
+  &.vuco-input-small
+
+    .vuco-textarea-mirror,
+    .vuco-textarea-container
+      font-size: 11px
+      line-height: 1.3
+      min-height: 35px
+
+    .vuco-textarea-mirror
+      padding: 3px 12px
+
+    .vuco-form-control
+      height: 100%

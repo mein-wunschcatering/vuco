@@ -1,0 +1,5 @@
+%div{ ':class' => "[defaultClasses, isDisabled ? disabledClass : '', isSelected ? selectedClass : '']", ':name' => 'name', 'v-on:click' => 'onClick', ':data-vuco-menu-item-value' => '_value' }
+  %i.mdi.mdi-check{ 'v-if' => 'isSelected' }
+  .vuco-menu-item-inside{ 'v-if' => 'hasLabel', 'v-html' => '_label' }
+  .vuco-menu-item-inside{ 'v-else' => true }
+    %slot

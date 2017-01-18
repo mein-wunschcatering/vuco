@@ -1,0 +1,61 @@
+@import bourbon
+@import normalize.css/normalize
+@import prismjs/themes/prism-solarizedlight
+@import ./bootstrap_grid
+@import ../css/index
+
+*
+  box-sizing: border-box
+
+section
+  display: none
+  margin-top: 40px
+
+  &.visible
+    display: block
+
+.vucoex
+  margin-bottom: 15px
+
+.vucoex-inside
+  +display(flex)
+  +flex-flow(row nowrap)
+  +justify-content(space-between)
+
+  .vuco-example,
+  .vuco-code
+    +flex-grow(1)
+    +flex-shrink(0)
+    width: 50%
+
+  .vuco-example
+    padding-right: 15px
+
+  .vuco-code
+    font-size: 13px
+    margin: 0
+    padding: 10px
+
+.store-updater
+  background-color: #f0f0f0
+  box-shadow: 0 0 3px rgba(#000, .3)
+  padding: 5px
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 1000
+
+.navigation
+
+  ul
+    list-style: none
+    margin: 0 auto
+    padding: 0
+
+  a
+    display: block
+    padding: 5px
+    position: relative
+
+
+

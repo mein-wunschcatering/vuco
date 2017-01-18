@@ -1,0 +1,184 @@
+$vuco-color-default-text: #666 !default
+$vuco-color-disabled-text: #d0d0d0 !default
+$vuco-color-primary: $color-primary !default
+$vuco-color-highlight: $color-highlight !default
+$vuco-color-danger: #f02a22 !default
+$vuco-color-success: #00a930 !default
+
+$vuco-color-default-text: #666
+$vuco-color-disabled-text: #d0d0d0
+$vuco-color-primary: $color-primary
+$vuco-color-highlight: $color-highlight
+$vuco-color-danger: #f02a22
+$vuco-color-success: #00a930
+
+.vuco-button
+  +user-select(none)
+  background: transparent
+  border-radius: 3px
+  box-sizing: border-box
+  color: $vuco-color-default-text
+  cursor: pointer
+  display: inline-block
+  font-size: 14px
+  letter-spacing: .05rem
+  line-height: 18px
+  margin: 3px
+  min-width: 20px
+  outline: none
+  outline-width: 0
+  padding: 8px 10px
+  position: relative
+  text-align: center
+  text-decoration: none
+  z-index: 0
+
+  .vuco-button-inside
+
+  &:hover
+    background-color: #f3f3f3
+    text-decoration: none
+
+  &:active
+    color: lighten($vuco-color-default-text, 10%)
+
+  &.vuco-button-block
+    display: block
+
+  &.vuco-button-large
+    font-size: 16px
+    line-height: 20px
+    min-width: 30px
+    padding: 15px
+
+  &.vuco-button-small
+    font-size: 12px
+    line-height: 16px
+    padding: 5px 10px
+
+  &.vuco-button-tiny
+    font-size: 11px
+    line-height: 14px
+    padding: 2px 5px
+
+  &.vuco-button-disabled
+    background-color: transparent
+    color: $vuco-color-disabled-text
+    cursor: default
+
+  &.vuco-button-hidden
+    display: none
+
+  &.vuco-button-primary
+    color: $vuco-color-primary
+
+    &:active
+      color: lighten($vuco-color-primary, 10%)
+
+    &.vuco-button-disabled
+      color: rgba($vuco-color-primary, .4)
+
+  &.vuco-button-highlight
+    color: $vuco-color-highlight
+
+    &:active
+      color: lighten($vuco-color-highlight, 10%)
+
+    &.vuco-button-disabled
+      color: rgba($vuco-color-highlight, .4)
+
+  &.vuco-button-danger
+    color: $vuco-color-danger
+
+    &:active
+      color: lighten($vuco-color-danger, 10%)
+
+    &.vuco-button-disabled
+      color: rgba($vuco-color-danger, .4)
+
+  &.vuco-button-success
+    color: $vuco-color-success
+
+    &:active
+      color: lighten($vuco-color-success, 10%)
+
+    &.vuco-button-disabled
+      color: rgba($vuco-color-success, .4)
+
+  &.vuco-button-filled
+    background-color: #f3f3f3
+    color: #333
+
+    &:hover
+      background-color: darken(#f3f3f3, 3%)
+
+    &:active
+      background-color: darken(#f3f3f3, 6%)
+
+    &.vuco-button-disabled
+      background-color: #f3f3f3
+      color: #ccc
+
+    &.vuco-button-primary
+      background-color: $vuco-color-primary
+      color: #f0f0f0
+
+      &:hover
+        background-color: lighten($vuco-color-primary, 5%)
+        color: #fff
+
+      &:active
+        background-color: lighten($vuco-color-primary, 10%)
+
+      &.vuco-button-disabled
+        background-color: lighten($vuco-color-primary, 40%)
+        color: #fff
+
+    &.vuco-button-highlight
+      background-color: $vuco-color-highlight
+      color: #f0f0f0
+
+      &:hover
+        background-color: lighten($vuco-color-highlight, 5%)
+        color: #fff
+
+      &:active
+        background-color: lighten($vuco-color-highlight, 10%)
+
+      &.vuco-button-disabled
+        background-color: lighten($vuco-color-highlight, 30%)
+        color: #fff
+
+    &.vuco-button-success
+      background-color: $vuco-color-success
+      color: #f0f0f0
+
+      &:hover
+        background-color: lighten($vuco-color-success, 5%)
+        color: #fff
+
+      &:active
+        background-color: lighten($vuco-color-success, 10%)
+
+      &.vuco-button-disabled
+        background-color: lighten($vuco-color-success, 35%)
+        color: #fff
+
+    &.vuco-button-danger
+      background-color: $vuco-color-danger
+      color: #f0f0f0
+
+      &:hover
+        background-color: lighten($vuco-color-danger, 5%)
+        color: #fff
+
+      &:active
+        background-color: lighten($vuco-color-danger, 10%)
+
+      &.vuco-button-disabled
+        background-color: lighten($vuco-color-danger, 35%)
+        color: #fff
+
+
+
+

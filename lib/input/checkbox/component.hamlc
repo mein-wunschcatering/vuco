@@ -1,0 +1,9 @@
+%div{ ':class' => "[defaultClasses, isChecked ? checkedClass : '', isDisabled ? disabledClass : '', isLarge ? largeClass : '', isSmall ? smallClass : '']", 'data-vuco-input' => '', ':data-vuco-input-name' => '_name', ':data-vuco-input-value' => '_value' }
+  .vuco-checkbox-inside
+    .vuco-input-container{ 'v-on:click' => 'onCheckClick' }
+      %i.mdi.mdi-checkbox-blank-outline.icon-inactive
+      %i.mdi.mdi-checkbox-marked.icon-active
+      %input.vuco-form-control{ ':id' => 'componentUniqueId', ':disabled' => 'isDisabled', ':name' => '_name', ':checked' => 'isChecked', type: 'checkbox', 'ref' => 'input' }
+    %label{ ':for' => 'componentUniqueId', 'v-if' => 'hasLabel', 'v-on:click' => 'onCheckClick' } {{ _label }}
+  %p.error{ 'v-if' => "hasErrors" } {{ _errorMessage }}
+  %p.hint{ 'v-if' => "hasHint" } {{ _hint }}
