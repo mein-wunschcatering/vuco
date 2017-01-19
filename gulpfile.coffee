@@ -4,6 +4,7 @@ coffeeify       = require('coffeeify')
 fs              = require('fs')
 aliasify        = require('aliasify')
 hamlify         = require('hamlify')
+babelify        = require('babelify')
 _               = require('lodash')
 mkdirp          = require('mkdirp')
 path            = require('path')
@@ -34,8 +35,10 @@ gulp.task 'watch', ->
   gulp.start('build')
 
   watch([
+    'lib/**/*.js',
     'lib/**/*.coffee',
     'lib/**/*.hamlc',
+    'doc/**/*.js',
     'doc/**/*.coffee',
     'doc/**/*.hamlc'
   ], { read: false }, batch((events, done) ->
@@ -155,7 +158,17 @@ buildBrowserify = (files, config) ->
     sourceMap:  true
     global:     true
   })
+  stream = stream.transform(babelify, {
+    # sourceMapsAbsolute: true
+    presets: [
+      require('babel-preset-es2015'),
+      require('babel-preset-es2016')
+    ]
+  })
   stream = stream.transform(aliasify, { global: true, aliases: { 'vue': 'vue/dist/vue' } })
   stream = appendError(stream, 'Curo Coffee Error')
   stream = stream.bundle()
   stream
+
+
+

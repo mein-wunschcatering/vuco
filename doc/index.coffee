@@ -1,7 +1,7 @@
 Vue = require('vue')
 Vue.use(require('vuex'))
 
-require('../lib/index')
+require('../lib/index').default
 
 _     = require('underscore')
 $     = require('jquery')
