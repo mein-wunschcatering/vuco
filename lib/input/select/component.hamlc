@@ -1,4 +1,4 @@
-%div{ ':class' => "[defaultClasses, isDisabled ? disabledClass : '', isRequired ? requiredClass : '', hasErrors ? errorClass : '', isSmall ? smallClass : '']", 'data-vuco-input' => '', ':data-vuco-input-name' => '_name', ':data-vuco-input-value' => '_value' }
+%div{ ':class' => "[defaultClasses, textAlignClass, isDisabled ? disabledClass : '', isRequired ? requiredClass : '', hasErrors ? errorClass : '', hasIcon ? iconClass : '', isSmall ? smallClass : '']", 'data-vuco-input' => '', ':data-vuco-input-name' => '_name', ':data-vuco-input-value' => '_value' }
   %label{ ':for' => 'componentUniqueId', 'v-if' => 'hasLabel' } {{ _label }}
   %vuco-dropdown-button{ 'filled' => 'true', 'label' => 'test' }
     %slot
