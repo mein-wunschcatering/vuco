@@ -30,8 +30,12 @@ module.exports = require('../abstract/component').extend
       @.$emit('vuco-menu-menu-item-click', @, vueComp)
 
     onSelfMenuItemSelect: (value, singleSelect = true) ->
-      _.each @.$children, (child) =>
-        @onUpdateStateAttribute(child._name, 'selected', value == child._value)
+      if _.isArray(value)
+        _.each @.$children, (child) =>
+          @onUpdateStateAttribute(child._name, 'selected', _.contains(value, child._value))
+      else
+        _.each @.$children, (child) =>
+          @onUpdateStateAttribute(child._name, 'selected', value == child._value)
 
   mounted: ->
     _.each @.$children, (child) =>

@@ -9,7 +9,8 @@ module.exports = require('../button/component').extend
   ]
 
   props:
-    opened: { default: false }
+    opened:   { default: false }
+    overflow: { default: 'ellipsis' } # null, ellipsis
 
   computed:
 
@@ -21,7 +22,7 @@ module.exports = require('../button/component').extend
       'vuco-button vuco-dropdown-button'
 
     dropdownVisibilityClass: ->
-      'vuco-dropdown-button-content-open'
+      'vuco-dropdown-button-open'
 
   methods:
 
