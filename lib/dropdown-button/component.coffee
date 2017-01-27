@@ -35,6 +35,15 @@ module.exports = require('../button/component').extend
 
       label
 
+    updateMaxHeight: ->
+      return unless @_opened == true
+
+      bottom        = @.$refs.content.getBoundingClientRect().bottom
+      height        = @.$refs.content.getBoundingClientRect().height
+      windowHeight  = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+      maxHeight     = height + (windowHeight - bottom) - 25
+      @.$refs.content.setAttribute('style', "max-height: #{maxHeight}px")
+
     onClickOutside: ->
       @onUpdateAttribute('opened', false)
 
@@ -68,6 +77,8 @@ module.exports = require('../button/component').extend
 
     @.$off('vuco-dropdown-menu-menu-item-select')
 
+  updated: ->
+    @updateMaxHeight()
 
 
 

@@ -1,7 +1,7 @@
 {
   "name": "vuco",
   "version": "0.1.0",
-  "description": "Vue.js components set",
+  "description": "Vue.js components set implemented in coffeescript and hamlc",
   "main": "lib/index.coffee",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start karma.conf.js",
