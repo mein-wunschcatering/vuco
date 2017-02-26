@@ -13,9 +13,14 @@
     box-shadow: 0 2px 3px rgba(#000, .3)
     display: none
     left: 0
+    min-height: 200px
     min-width: 200px
+    overflow: auto
     position: absolute
     top: 100%
 
-    &.vuco-dropdown-button-content-open
+  &.vuco-dropdown-button-open
+    z-index: 100
+
+    .vuco-dropdown-button-content
       display: block

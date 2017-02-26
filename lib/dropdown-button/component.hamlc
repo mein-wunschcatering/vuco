@@ -1,6 +1,6 @@
-%a{ ':class' => "[defaultClasses, isHidden ? hiddenClass : '', isFilled ? filledClass : '', isBlock ? blockClass : '', isDisabled ? disabledClass : '', hasSize ? sizeClass : '', hasTheme ? themeClass : '']", ':href' => '_href', ':target' => '_target', ':title' => '_title', 'v-on:click' => 'onClick', ':name' => 'name', 'v-on-clickaway' => 'onClickOutside', ':data-vuco-name' => '_name' }
+%a{ ':class' => "[defaultClasses, overflowClass, isHidden ? hiddenClass : '', isFilled ? filledClass : '', isBlock ? blockClass : '', isDisabled ? disabledClass : '', hasSize ? sizeClass : '', hasTheme ? themeClass : '', _opened ? dropdownVisibilityClass : '']", ':href' => '_href', ':target' => '_target', ':title' => '_title', 'v-on:click' => 'onClick', ':name' => 'name', 'v-on-clickaway' => 'onClickOutside', ':data-vuco-name' => '_name' }
   %i.mdi.mdi-chevron-down
   .vuco-button-inside{ 'v-html' => '_label' }
-  .vuco-dropdown-button-content{ 'ref' => 'content', ':class' => "[_opened ? dropdownVisibilityClass : '']" }
+  .vuco-dropdown-button-content{ 'ref' => 'content' }
     %vuco-menu
       %slot

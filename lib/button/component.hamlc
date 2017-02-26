@@ -1,4 +1,4 @@
-%a{ ':class' => "[defaultClasses, isHidden ? hiddenClass : '', isFilled ? filledClass : '', isBlock ? blockClass : '', isDisabled ? disabledClass : '', hasSize ? sizeClass : '', hasTheme ? themeClass : '']", ':href' => '_href', ':target' => '_target', ':title' => '_title', 'v-on:click' => 'onClick', ':data-vuco-name' => '_name' }
+%a{ ':class' => "[defaultClasses, overflowClass, isHidden ? hiddenClass : '', isFilled ? filledClass : '', isBlock ? blockClass : '', isDisabled ? disabledClass : '', hasSize ? sizeClass : '', hasTheme ? themeClass : '']", ':href' => '_href', ':target' => '_target', ':title' => '_title', 'v-on:click' => 'onClick', ':data-vuco-name' => '_name' }
   .vuco-button-inside{ 'v-if' => 'hasLabel', 'v-html' => '_label' }
   .vuco-button-inside{ 'v-else' => true }
     %slot

@@ -9,12 +9,16 @@ module.exports = require('../input/component').extend
 
   computed:
 
-    # _value:
-    #   get: ->
-    #     v = @getStateAttr('value')
-    #     if v? then v else @value
-    #   set: (val) ->
-    #     @onUpdateValue(val)
+    _value:
+      get: ->
+        v = @getStateAttr('value')
+        v = if v? then v else @value
+        return v if @_multiple != true
+
+        v = [v] if !_.isNull(v) && !_.isUndefined(v) && !_.isArray(v)
+        v || []
+      set: (val) ->
+        @onUpdateValue(val)
 
     _multiple: ->
       v = @getStateAttr('multiple')
@@ -28,10 +32,26 @@ module.exports = require('../input/component').extend
     updateButtonLabel: ->
       _.each @.$children, (child) =>
         if _.isFunction(child.getLabelForMenuItemValue)
-          @onUpdateStateAttribute(child._name, 'label', child.getLabelForMenuItemValue(@_value))
+          if @_multiple == true
+            label = []
+            _.each @_value, (v) -> label.push(child.getLabelForMenuItemValue(v))
+            @onUpdateStateAttribute(child._name, 'label', _.compact(label).join(', '))
+          else
+            @onUpdateStateAttribute(child._name, 'label', child.getLabelForMenuItemValue(@_value))
+
+    updateForMultiValue: (value) ->
+      return unless @_multiple == true
+
+      if _.contains(@_value, value)
+        @onUpdateValue(_.without(@_value, value))
+      else
+        @onUpdateValue(@_value.concat(value))
 
     onVucoMenuItemClick: (dropdownComp, menuComp, itemComp) ->
-      @onUpdateValue(itemComp._value)
+      if @_multiple == true
+        @updateForMultiValue(itemComp._value)
+      else
+        @onUpdateValue(itemComp._value)
 
   watch:
 
@@ -49,3 +69,6 @@ module.exports = require('../input/component').extend
   beforeDestroy: ->
     _.each @.$children, (child) =>
       child.$off('vuco-dropdown-menu-menu-item-click')
+
+
+

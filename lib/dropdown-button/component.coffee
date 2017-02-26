@@ -9,7 +9,8 @@ module.exports = require('../button/component').extend
   ]
 
   props:
-    opened: { default: false }
+    opened:   { default: false }
+    overflow: { default: 'ellipsis' } # null, ellipsis
 
   computed:
 
@@ -21,7 +22,7 @@ module.exports = require('../button/component').extend
       'vuco-button vuco-dropdown-button'
 
     dropdownVisibilityClass: ->
-      'vuco-dropdown-button-content-open'
+      'vuco-dropdown-button-open'
 
   methods:
 
@@ -33,6 +34,15 @@ module.exports = require('../button/component').extend
           label = child.getLabelForMenuItemValue(value)
 
       label
+
+    updateMaxHeight: ->
+      return unless @_opened == true
+
+      bottom        = @.$refs.content.getBoundingClientRect().bottom
+      height        = @.$refs.content.getBoundingClientRect().height
+      windowHeight  = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+      maxHeight     = height + (windowHeight - bottom) - 25
+      @.$refs.content.setAttribute('style', "max-height: #{maxHeight}px")
 
     onClickOutside: ->
       @onUpdateAttribute('opened', false)
@@ -67,6 +77,8 @@ module.exports = require('../button/component').extend
 
     @.$off('vuco-dropdown-menu-menu-item-select')
 
+  updated: ->
+    @updateMaxHeight()
 
 
 

@@ -18,6 +18,7 @@ module.exports = require('../abstract/component').extend
     href:           { default: null }
     target:         { default: null }
     title:          { default: null }
+    overflow:       { default: null } # null, ellipsis
 
   computed:
 
@@ -79,6 +80,12 @@ module.exports = require('../abstract/component').extend
       v = @getStateAttr('disabled')
       if _.isBoolean(v) then v else @disabled
 
+    _overflow: ->
+      v = @getStateAttr('overflow') || @overflow
+      switch v
+        when 'ellipsis' then return 'ellipsis'
+        else return null
+
     hasLabel: ->
       _.isString(@_label) && _.size(@_label) > 0
 
@@ -126,6 +133,11 @@ module.exports = require('../abstract/component').extend
 
     disabledClass: ->
       'vuco-button-disabled'
+
+    overflowClass: ->
+      switch @_overflow
+        when 'ellipsis' then 'vuco-button-overflow-ellipsis'
+        else null
 
     themeClass: ->
       return '' if !_.isString(@_theme) || _.size(@_theme) <= 0
