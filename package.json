@@ -16,6 +16,7 @@
   },
   "license": "MIT",
   "files": [
+    "css",
     "lib",
     "LICENSE",
     "package.json",
@@ -29,9 +30,9 @@
     "bourbon": "~4.2.7",
     "underscore": "^1.8.3",
     "underscore.string": "^3.3.4",
-    "vue": "2.0.5",
-    "vue-clickaway": "2.1.0",
-    "vuex": "2.0.0"
+    "vue": ">=2.0.5",
+    "vue-clickaway": "~2.1.0",
+    "vuex": ">=2.0.0"
   },
   "devDependencies": {
     "aliasify": "^2.1.0",

@@ -35,6 +35,7 @@ module.exports = require('../../abstract/component').extend
 
     _errorMessage: ->
       v = @getStateAttr('errorMessage')
+      v = v.join('<br>') if _.isArray(v)
       if _.isString(v) && _.size(v) > 0 then v else (@errorMessage || null)
 
     _hint: ->

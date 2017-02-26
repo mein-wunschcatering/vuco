@@ -1,6 +1,7 @@
-_ = require('underscore')
+_     = require('underscore')
+setup = require('../setup')
 
-module.exports = require('vue').extend
+module.exports = setup.Vue.extend
 
   props:
     name: { default: null }
@@ -24,16 +25,16 @@ module.exports = require('vue').extend
       @_generatedName or= _.uniqueId('vuco-')
 
     getStateAttr: (name) ->
-      if @_state[@_name]?[name]? then @_state[@_name][name] else null
+      @.$store.getters[setup.options.getterName](@_name, name)
 
     onUpdateValue: (value) ->
-      @.$store.commit('UPDATE_VALUE', { attr: @_name, key: 'value', value: value })
+      @.$store.dispatch(setup.options.updateActionName, { attr: @_name, key: 'value', value: value }, { root: true })
 
     onUpdateAttribute: (attrName, value) ->
-      @.$store.commit('UPDATE_VALUE', { attr: @_name, key: attrName, value: value })
+      @.$store.dispatch(setup.options.updateActionName, { attr: @_name, key: attrName, value: value }, { root: true })
 
     onUpdateStateAttribute: (attrName, attrKey, value) ->
-      @.$store.commit('UPDATE_VALUE', { attr: attrName, key: attrKey, value: value })
+      @.$store.dispatch(setup.options.updateActionName, { attr: attrName, key: attrKey, value: value }, { root: true })
 
     fireDomEvent: ->
       args = Array.prototype.slice.call(arguments)
